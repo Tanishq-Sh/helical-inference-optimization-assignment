@@ -38,3 +38,9 @@ This project runs inference using the HyenaDNA model on a sample of DNA sequence
     python main.py
     ```
     Logs and embeddings will be saved in the `output` directory, named with a timestamp.
+
+## Notebook for Experimentation
+
+You can use the Google Colab notebook:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1vnviiip2vLAJGDBmxU1t2EF5gmsb3p6H?authuser=1)
