@@ -66,4 +66,4 @@ Peak GPU Memory:        {peak_gpu_mb:.2f} MB
   # Reset peak memory stats for the next run if needed
   if DEVICE == "cuda" and torch.cuda.is_available():
       torch.cuda.reset_peak_memory_stats()
-  
+      

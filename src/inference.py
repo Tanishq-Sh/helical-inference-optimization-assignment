@@ -38,7 +38,7 @@ def run_hyena_inferencing(model, sequences_to_process: list):
     # Inference on pertubations
     start = time.time()
     start_rss = psutil.Process().memory_info().rss / (1024 * 1024)
-    BATCH_SIZE = 32
+    BATCH_SIZE = MODEL_CONFIG["batch_size"]
     overall_start = time.time()
 
     for i in range(0, DATA_CONFIG["sample_size"], BATCH_SIZE):
