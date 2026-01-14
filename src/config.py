@@ -12,6 +12,8 @@ MODEL_CONFIG = {
     "model_name": "hyenadna-tiny-1k-seqlen-d256", # Model name to use
     # "model_name": "hyenadna-tiny-1k-seqlen", # Alternate Model name to use
     "batch_size": 32, # Number of sequences to process in a batch
+    "use_amp": True, # Use auto mixed precision for optimization
+    "amp_dtype": torch.float16 # will use amp_dtype only when use_amp is set to True
 }
 
 DATA_CONFIG = {

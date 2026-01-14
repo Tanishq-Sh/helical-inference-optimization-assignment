@@ -1,4 +1,5 @@
 import torch
+from torch.amp import autocast
 import numpy as np
 import psutil
 import logging
@@ -46,8 +47,9 @@ def run_hyena_inferencing(model, sequences_to_process: list):
         input_ids_tensor = torch.tensor(raw_tokens["input_ids"]).to(DEVICE)
 
         with torch.no_grad():
-            outputs = model.model(input_ids=input_ids_tensor)
-            embeddings = outputs
+            with autocast(DEVICE, enabled=MODEL_CONFIG["use_amp"], dtype=MODEL_CONFIG["amp_dtype"]):
+                outputs = model.model(input_ids=input_ids_tensor)
+                embeddings = outputs
 
         t_loop_out = time.time()
         latencies.append(t_loop_out - t_loop_in)

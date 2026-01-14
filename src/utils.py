@@ -49,6 +49,8 @@ def log_inference_profile(
 ------------ Inference Profile ------------
 Device:                 {DEVICE.upper()}
 Model name:             {MODEL_CONFIG["model_name"]}
+amp enabled:            {MODEL_CONFIG["use_amp"]}
+amp dtype:              {MODEL_CONFIG["amp_dtype"] if MODEL_CONFIG["use_amp"] else "torch.float32 (default)"}
 Total Samples:          {num_samples}
 Batch Size:             {MODEL_CONFIG["batch_size"]}
 ---
