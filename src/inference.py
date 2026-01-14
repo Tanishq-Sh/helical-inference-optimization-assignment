@@ -52,8 +52,8 @@ def run_hyena_inferencing(model, sequences_to_process: list):
         t_loop_out = time.time()
         latencies.append(t_loop_out - t_loop_in)
         
-    if isinstance(embeddings, torch.Tensor):
-        pertubation_embeddings.append(embeddings)
+        if isinstance(embeddings, torch.Tensor):
+            pertubation_embeddings.append(embeddings)
 
     total_time = time.time() - overall_start
 
