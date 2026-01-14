@@ -10,6 +10,7 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu" # for dynamic switching 
 
 MODEL_CONFIG = {
     "model_name": "hyenadna-tiny-1k-seqlen-d256", # Model name to use
+    # "model_name": "hyenadna-tiny-1k-seqlen", # Alternate Model name to use
     "batch_size": 32, # Number of sequences to process in a batch
 }
 
