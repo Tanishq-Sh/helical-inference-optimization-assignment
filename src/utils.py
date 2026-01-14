@@ -48,6 +48,7 @@ def log_inference_profile(
   log_line = f"""
 ------------ Inference Profile ------------
 Device:                 {DEVICE.upper()}
+Model name:             {MODEL_CONFIG["model_name"]}
 Total Samples:          {num_samples}
 Batch Size:             {MODEL_CONFIG["batch_size"]}
 ---
