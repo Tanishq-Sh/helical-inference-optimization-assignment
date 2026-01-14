@@ -5,6 +5,7 @@ import torch
 import logging
 from src.config import DATA_CONFIG, MODEL_CONFIG, DEVICE
 
+log = logging.getLogger(__name__)
 
 def add_pertubations(sequence_string, num_of_pertubations):
   """adds pertubations to a sequence of nucleotides"""
@@ -48,7 +49,7 @@ def log_inference_profile(
 ------------ Inference Profile ------------
 Device:                 {DEVICE.upper()}
 Total Samples:          {num_samples}
-Batch Size:             {DATA_CONFIG["BATCH_SIZE"]}
+Batch Size:             {MODEL_CONFIG["batch_size"]}
 ---
 Total Time:             {total_time:.2f} s
 Throughput:             {throughput:.2f} samples/s
@@ -58,7 +59,7 @@ CPU RAM Usage:          {end_rss_mb - start_rss_mb:.2f} MB
 Peak GPU Memory:        {peak_gpu_mb:.2f} MB
 ---------------------------------------------------
 """
-  logging.info(log_line)
+  log.info(log_line)
   # Reset peak memory stats for the next run if needed
   if DEVICE == "cuda" and torch.cuda.is_available():
       torch.cuda.reset_peak_memory_stats()
